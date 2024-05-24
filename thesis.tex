@@ -1,0 +1,177 @@
+%!TEX program = xelatex
+\documentclass[12pt,a4paper]{report}
+
+\usepackage{thesis}
+\usepackage{lmodern}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[hidelinks]{hyperref}
+\usepackage[left=2.5cm,top=2.5cm,right=2.5cm,bottom=2.5cm]{geometry}
+\usepackage{nomencl}
+\makenomenclature
+\renewcommand{\nomname}{ABBREVIATIONS}
+
+\usepackage{tocloft}
+\renewcommand{\cftchapfont}{}
+\renewcommand{\cftchappagefont}{}
+\renewcommand{\cftdot}{}
+
+\newcommand{\thesistitle}{ Title of your Thesis }
+\newcommand{\thesisauthor}{ Your Name }
+\newcommand{\programname}{ Industrial Engineering}
+\newcommand{\departmentname}{Department of Industrial Engineering}
+\newcommand{\thesisdate}{August 2022}
+\newcommand{\signdate}{24 August 2022}
+\newcommand{\thesisdegree}{PhD}
+\newcommand{\dedicate}{\textit{To My Family}}
+\newcommand{\supervisorinfo}{Prof.XXX, Thesis Supervisor }  
+\newcommand{\cosupervisorinfo}{Prof. XXX, Department Head}  
+
+%% copy from poms template
+
+\usepackage{graphicx}
+\usepackage{natbib}
+
+\bibliographystyle{abbrvnat}
+\setcitestyle{authoryear,open={(},close={)}} %Citation-related commands
+
+\usepackage{multirow} % for tables 
+\usepackage{booktabs} % for tables
+
+\usepackage{float} % for table [H] float 
+\usepackage{caption}
+
+\usepackage{ctex}  
+
+
+\renewcommand{\contentsname}{Contents}
+\renewcommand{\listfigurename}{List of Figures}
+\renewcommand{\listtablename}{List of Tables}
+\renewcommand{\refname}{References}
+%\renewcommand\refname{My References}
+\renewcommand{\bibname}{References}
+\renewcommand{\abstractname}{Abstract}
+\renewcommand{\indexname}{Index}
+\renewcommand{\tablename}{Table}
+\renewcommand{\figurename}{Figure}
+\renewcommand{\appendixname}{Appendix}
+
+
+\newlength\mylength
+\renewcommand\cftchappresnum{Chapter~}
+\settowidth\mylength{\bfseries\cftchappresnum\cftchapaftersnum}
+\addtolength\cftchapnumwidth{\mylength}
+%%%
+
+
+\usepackage{threeparttable} % for table footnote
+\usepackage{longtable} % 为了跨页表格
+
+
+%\usepackage{adjustbox} % for table 
+\usepackage{xspace}
+\usepackage{amsmath}
+\usepackage{amsthm, amsthm}
+\usepackage{amsfonts} % for \mathbb
+\usepackage{bm}      % for \bm macro
+\usepackage{array}
+\usepackage{booktabs}
+
+%%% for chapter4
+\newtheorem{definition}{Definition}
+\newtheorem{proposition}{Proposition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}{Lemma}
+
+%\usepackage{algorithm}
+%\usepackage{algorithmicx}
+\usepackage[ruled,linesnumbered]{algorithm2e}
+\usepackage{algpseudocode}
+
+\makeatletter
+\let\c@lofdepth\relax
+\let\c@lotdepth\relax
+\makeatother
+\usepackage{subfigure}
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%% Begin the document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\begin{document}
+
+\pagenumbering{roman}
+\pagestyle{plain}
+\setcounter{page}{1}
+\addcontentsline{toc}{chapter}{Title Page}
+\include{1_title}
+
+\newpage
+\addcontentsline{toc}{chapter}{Authorization Page}
+\include{2_authorization}
+
+\newpage
+\addcontentsline{toc}{chapter}{Signature Page}
+\include{3_signature}
+
+%\newpage
+%\include{4_dedicate}
+
+\newpage
+\addcontentsline{toc}{chapter}{Acknowledgments}
+\include{5_acknowledgement}
+
+\newpage
+\addcontentsline{toc}{chapter}{Table of Contents}
+\tableofcontents
+
+\newpage
+\addcontentsline{toc}{chapter}{List of Figures}
+\listoffigures
+
+\newpage
+\addcontentsline{toc}{chapter}{List of Tables}
+\listoftables
+
+\newpage
+\addcontentsline{toc}{chapter}{Abstract}
+\include{abstract}
+
+
+
+\newpage
+\pagenumbering{arabic}
+\pagestyle{plain}
+\setcounter{page}{1}
+\include{chapter1}
+\include{chapter2}
+\include{chapter3}
+\include{chapter4}
+\include{chapter5}
+
+\newpage
+\addcontentsline{toc}{chapter}{Reference}
+
+
+\bibliography{reference}
+
+
+\newpage
+\appendix
+
+ 
+\addcontentsline{toc}{chapter}{Appendix}
+
+
+\input{appendix1}
+%\input{appendix2}
+%\input{appendix3}
+
+\end{document}
